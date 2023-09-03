@@ -1,6 +1,7 @@
 package salem.datastructure.stack;
 import java.util.Scanner;
 
+
 public class stackArray {
     private Object[] stack;
     private int peek;
