@@ -8,7 +8,7 @@ public class demo_stack extends stack_operation
     public static void main(String[] args) {
           stack_operation<Integer> stack = new stack_operation<Integer>();
 
-          stack.push(3);
+          stack.push(4);
           stack.push(5);
           stack.push(6);
           stack.push(7);
