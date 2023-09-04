@@ -88,7 +88,7 @@ public class LinkedList <T> implements Iterable<T>{
 
     public void deleteAtposition(int pos){
         if (head==null) {
-            throw new IndexOutOfBoundsException("list is empty ");
+            throw new IndexOutOfBoundsException("list is empty");
         }
         if (pos==0){
             head=head.Next;
