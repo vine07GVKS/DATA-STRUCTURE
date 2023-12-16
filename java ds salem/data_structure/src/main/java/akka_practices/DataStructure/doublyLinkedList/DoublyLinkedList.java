@@ -8,7 +8,6 @@ public class DoublyLinkedList <T> implements Iterable<T>{
     Node head;
     Node tail;
 
-
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -64,6 +63,7 @@ public class DoublyLinkedList <T> implements Iterable<T>{
     public void display(){
         if (head==null)
             System.out.println("list is empty0");
+
         Node temp = head;
         while (temp != null){
             System.out.print(temp.data + " ");
