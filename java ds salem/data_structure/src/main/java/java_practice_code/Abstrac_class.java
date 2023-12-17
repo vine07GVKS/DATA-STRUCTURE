@@ -15,7 +15,7 @@ public class Abstrac_class {
 
 abstract class computer{
 
-    abstract void turnOff();
+    abstract void turnOff();  // this only function part ----- deceleration part will be defined the other classes
 
         void  turnOn(){
             System.out.println("Turning ON ");
@@ -30,7 +30,7 @@ class HP extends computer{
     }
 
     @Override
-    void turnOff()
+    void turnOff()   // this is deceleration classes in for turnOFF method
     {  //to call the abstract function using inside of the method in class
         System.out.println("Turning OFF HP");
     }
