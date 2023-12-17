@@ -1,13 +1,22 @@
 package java_practice_code;
 
+import java.util.Collections;
+
 public class Abstrac_class {
     public static void main(String[] args) {
      HP obj = new HP();
      obj.turnOn();
+     obj.turnOff();
+     Dell obj1 =new Dell();
+     obj1.turnOn();
+     obj1.turnOff();
     }
 }
 
 abstract class computer{
+
+    abstract void turnOff();
+
         void  turnOn(){
             System.out.println("Turning ON ");
         }
@@ -15,5 +24,27 @@ abstract class computer{
 
 class HP extends computer{
 
+    @Override
+    void turnOn() {
+        System.out.println("Turning ON HP");
+    }
 
+    @Override
+    void turnOff()
+    {  //to call the abstract function using inside of the method in class
+        System.out.println("Turning OFF HP");
+    }
+}
+
+class Dell extends computer{
+
+    void turnOn() {
+        System.out.println("Turning ON DELL");
+    }
+
+    @Override
+    void turnOff()
+    {  //to call the abstract function using inside of the method in class
+        System.out.println("Turning OFF DELL");
+    }
 }
