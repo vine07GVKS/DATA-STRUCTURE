@@ -14,19 +14,22 @@ class UserDefined extends Exception
 public class ExceptionHandling
 {
 
-    static void check( int age ){
+    static void check( int age ) throws UserDefined,ArithmeticException,NumberFormatException {    // when userDefined Exception is created means use the throws keyword in the above the class
+                                                        // to give the function definition on the userDefined exception
+                                                        // this THROWS keyword basically working on the catch keyword processing and handel the whole function the entire function
         if (age<18) {
-            throw new ArithmeticException(" age invalid ");
+            throw new UserDefined(" age invalid ");  // this throw keyword used to the handle exception in the error function
+        }
+        else {
+            throw new ArithmeticException(" Age valid");
         }
     }
     public static void main(String[] args) {
         try {
-            check(17);
+            check(22);
         }
-        catch (ArithmeticException E){
+        catch (UserDefined | ArithmeticException | NumberFormatException E){  // " E " is the object
             System.out.println(E.getMessage());
         }
     }
 }
-
-
