@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 class DynamicArray{
     // Variables - Methods
-    private int arr[];
+    private int[] arr;
     private int size;
-    private static int initialCapacity= 4;
+    private static final int initialCapacity= 4;
     private int capacity;
 
     DynamicArray(){   // this constructor
@@ -43,7 +43,7 @@ class DynamicArray{
     public void InsertAtPos(int position , int value){
         if (size==capacity)
             expandArray();
-    for (int i = size-1; i>=position;i--){
+    for (int i = size-1; i>position;i--){
         arr[i+1]=arr[i];
         arr[position]=value;
         size++;
@@ -51,29 +51,27 @@ class DynamicArray{
     }
 
     public void deleteAtPos(int position){
-        for (int i = position+1; i<=size;i++){
+        for (int i = position+1; i<size;i++){
             arr[i-1]=arr[i];
         }
         size--;
         if(capacity>initialCapacity && capacity >3*size){
-            shrinkelArry();
+            shrinkelArray();
         }
     }
-    private void shrinkelArry(){
+    private void shrinkelArray(){
         capacity /=2;
         arr = java.util.Arrays.copyOf(arr,capacity);
     }
 
-    public void deleteAtEnd(){
-        size-=1;
-    }
+    public void deleteAtEnd(){ size-=1;}
 
     public void getIndexValue(int position ){
         int val=arr[position];
         System.out.println("given index value is : "+position +"index contain value " + val);
     }
 
-
+    public void ClearAllData(){size=-1;}
 
 }
 public class ArrayLinkedList
@@ -92,7 +90,8 @@ public class ArrayLinkedList
         System.out.println("4. Delete at Specified Position");
         System.out.println("5. Delete At End Value");
         System.out.println("6. See the index contain value ");
-        System.out.println("7. Exit\n");
+        System.out.println("7. Clear all data");
+        System.out.println("8. Exit\n");
         System.out.println("------------------------------------------");
         System.out.println("Enter your choice: \t");
 
@@ -150,19 +149,21 @@ public class ArrayLinkedList
                 position = input.nextInt();
                 list.getIndexValue(position);
             }
+            break;
 
             case 7:
             {
-                System.exit(0);
+                list.ClearAllData();
+                list.display();
+                System.out.println("--- All Data will be cleared in array ---");
             }
-            default:
-                System.out.println("Invalid Choice");
+            break;
 
+            case 8:{ System.exit(0); }
+            default: { System.out.println("Invalid Choice"); }
         }
 
-
     }
-
 
     }
 }
